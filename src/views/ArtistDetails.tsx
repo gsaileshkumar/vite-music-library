@@ -7,7 +7,10 @@ import { useGetTopAlbumsForArtistQuery } from "../lib/reducers";
 
 function ArtistDetails() {
   const { artist } = useParams();
-  const { data } = useGetTopAlbumsForArtistQuery(artist);
+  const { data, isLoading } = useGetTopAlbumsForArtistQuery(artist);
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
   if (data) {
     const albums = data.albums.slice();
     return (
@@ -23,7 +26,7 @@ function ArtistDetails() {
             .map((album: Album) => {
               return (
                 <FlexLi key={album.name}>
-                  <Link to={`/${artist}/album/${album.name}`}>
+                  <Link to={`/${artist}/${album.name.replace("/", " ")}`}>
                     <Card title={album.name} image={album.image} />
                   </Link>
                 </FlexLi>

@@ -6,7 +6,10 @@ import { Artist } from "../lib/types";
 import { useGetTopArtistsQuery } from "../lib/reducers";
 
 function Home() {
-  const { data } = useGetTopArtistsQuery({});
+  const { data, isLoading } = useGetTopArtistsQuery({});
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
   return (
     <FlexColumn>
       <StyledHeading>Top 10 Artists</StyledHeading>

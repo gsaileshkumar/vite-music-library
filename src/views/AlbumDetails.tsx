@@ -17,7 +17,10 @@ const Track = styled.p`
 `;
 function AlbumDetails() {
   const { artist, album } = useParams();
-  const { data } = useGetAlbumInfoQuery({ artist, album });
+  const { data, isLoading } = useGetAlbumInfoQuery({ artist, album });
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
   if (data) {
     return (
       <FlexColumn>
