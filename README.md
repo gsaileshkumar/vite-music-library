@@ -6,7 +6,7 @@
 
 Install the dependencies
 
-````bash
+```
 yarn
 ```
 
@@ -14,18 +14,26 @@ Copy the `.env.sample` file to `.env` and update the environment variables with 
 
 Run the development server:
 
-```bash
+```
 yarn dev
-````
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Build and Run Production version
 
-```bash
+```
 yarn build
 
 yarn preview
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Testing the app
+
+Uses `vitest` and `testing-library` for testing. To run tests, execute
+
+```
+yarn test
+```
