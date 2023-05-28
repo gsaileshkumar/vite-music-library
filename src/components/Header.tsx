@@ -20,7 +20,7 @@ const StyledLink = styled(Link)`
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledLink to="/home">Music Library</StyledLink>
+      <StyledLink to="/">Music Library</StyledLink>
     </StyledHeader>
   );
 };
